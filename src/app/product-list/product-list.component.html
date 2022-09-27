@@ -1,0 +1,16 @@
+
+<main class="main-container">
+    <div *ngFor="let product of products; let index=index;" class="main-div-container">
+        <div class="main-img">
+            <a [routerLink]="['/details', product.id]"><img src="{{product.url}}"></a>
+        </div>
+        <div class="main-h5-name">
+            <h5>{{product.name}}</h5>
+        </div>
+        <div class="main-p-price"><p>{{product.price}}$</p></div>
+            <div>
+                <input type="number" min="1" max="20" step="1" class="number-input" [(ngModel)]="count[index]">
+            </div>
+            <button (click)="AddToTheCart(product)" class="btn btn-primary submit">Add to cart</button>
+    </div>
+</main>

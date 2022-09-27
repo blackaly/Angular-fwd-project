@@ -1,0 +1,39 @@
+.section-ul-container{
+    display: flex; 
+    position: relative;
+    justify-content: center;
+    list-style-type: none;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.section-ul-container li img{
+    width: 40%;
+    border-radius: 15px;
+}
+
+.section-ul-container li h2{
+    width: 40%;
+    position: absolute;
+    right: 4%;
+    top: 30%;
+}
+
+.section-ul-container li p{
+    width: 40%;
+    position: absolute;
+    right: 4%;
+    top: 40%;
+}
+
+.section-div{
+    position: absolute;
+    right: 33%;
+    top:50%;
+}
+
+.section-ul-container li .submit{
+    position: absolute;
+    right: 29%;
+    top: 61%;
+}

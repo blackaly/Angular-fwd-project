@@ -1,0 +1,15 @@
+<section class="section-container">
+
+    <ul class="section-ul-container">
+        <li><img src="{{product?.url}}"></li>
+        <li>
+            <h2>{{product?.name}}</h2>
+            <p>{{product?.price}}$</p>
+            <div class="section-div">
+                <input type="number" min="1" max="20" step="1" class="number-input" [(ngModel)]="count">
+            </div>
+            <button (click)="AddToTheCart(product)" class="btn btn-primary submit">Add to cart</button>
+        </li>
+    </ul>
+
+</section>

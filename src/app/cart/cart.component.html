@@ -1,0 +1,25 @@
+<main>
+    
+<section class="section-container">
+
+    <div class="section-container-2" *ngFor="let car of _cart; let index=index">
+        <div class="div-img">
+            <img src="{{car.product.url}}">
+        </div>
+        <div class="div-content">
+            <p>{{car.product.price}}$</p>
+            <div>
+                <input value="{{car.Count}}" type="number" min="0" max="20" step="1" class="number-input" [(ngModel)]="Count[index]" (ngModelChange)="onChange(car, index)">
+            </div>
+        </div>
+</div>
+    <div class="section-div">
+        <h2 class="center" *ngIf="productPrice == 0">Cart is empty</h2>
+        <h2 *ngIf="productPrice != 0">{{productPrice}}$</h2>
+    </div>
+</section>
+
+<section *ngIf="productPrice != 0" class="form-section">
+    <app-user-form  (successEvent)="successEvent($event)"></app-user-form>
+</section>
+</main>

@@ -1,0 +1,27 @@
+<form #form="ngForm" (ngSubmit)="OnSubmit()">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input pattern="[A-Za-z ]*" type="text" required minlength="6" class="form-control" id="name" aria-describedby="emailHelp" name="Name" placeholder="(Minimum 6 characters)" [(ngModel)]="Name">
+          <div *ngIf="Name != '' && Name.length < 6"><small style="color:red;">Name length must be greater than 6</small></div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Address</label>
+          <input type="text" required minlength="6" class="form-control" id="exampleInputPassword1" name="Address" placeholder="(Minimum 6 characters)" [(ngModel)]="Address">
+          <div *ngIf="Address != '' && Address.length < 6"><small style="color:red;">Address length must be greater than 6</small></div>
+        </div>
+
+        <div class="form-group">
+            <label for="creditcard">Credit Card</label>
+            <input pattern="[0-9]*" type="text" required minlength="16" maxlength="16" class="form-control" id="creditcard" placeholder="(16-digit-numbers)" name="CreditCard" (keypress)="validate()" [(ngModel)]="CreditCard">
+            <div>
+              <small 
+              style="color:red;"
+              *ngIf="form"
+              >
+              {{error}}
+            </small>
+            </div>
+          </div>
+        <input [disabled]="form.invalid" class="btn btn-primary" type="submit" value="Submit">
+</form>
